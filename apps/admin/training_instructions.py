@@ -44,9 +44,8 @@ layout = html.Div(
                                     html.Br(),
                                     html.Div(
                                         [
-                                            dbc.Checkbox(id="accept_checkbox", className="mr-2"),
-                                            html.Label("I have read and accept all of the instructions carefully."),
-                                            dbc.Button("Proceed", id="proceed_button", color="primary", href="/training_documents?mode=add", disabled=True),
+                                            
+                                            dbc.Button("Proceed", id="proceed_button", color="primary", href="/training_documents?mode=add"),
                                         ],
                                         style={"display": "flex", "justify-content": "flex-end", "gap": "10px"},
                                     ),
@@ -93,12 +92,4 @@ def fetch_announcements(pathname):
 
         instruction_content = df.loc[0, "trinstructions_content"]
         return instruction_content
-
-
-# Define the callback to enable/disable the button
-@app.callback(
-    Output("proceed_button", "disabled"),
-    Input("accept_checkbox", "value")
-)
-def toggle_proceed_button(checked): 
-    return not checked if checked is not None else True
+ 
