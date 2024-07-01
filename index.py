@@ -194,7 +194,7 @@ def displaypage(pathname, sessionlogout, user_id, accesstype, search):
                     returnlayout = about_TINQAD.layout
                 elif pathname == '/training_documents':
                     returnlayout = training_documents.layout 
-                elif pathname == '/km_dashboard':
+                elif pathname == '/km_dashboard': 
                     returnlayout = km_dashboard.layout 
                 elif pathname == '/SDGimpactrankings/SDG_submission':
                     returnlayout = SDG_submission.layout 
